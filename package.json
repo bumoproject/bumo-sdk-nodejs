@@ -1,5 +1,5 @@
 {
-  "name": "bumo-sdk",
+  "name": "bumo-sdk-nodejs",
   "version": "2.1.0",
   "description": "bumo sdk",
   "main": "index.js",
