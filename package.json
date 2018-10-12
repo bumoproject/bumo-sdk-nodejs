@@ -1,7 +1,7 @@
 {
   "name": "bumo-sdk-nodejs",
   "version": "2.1.0",
-  "description": "bumo sdkjs",
+  "description": "bumo sdk",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
