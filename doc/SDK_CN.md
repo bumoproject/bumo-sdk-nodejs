@@ -1473,20 +1473,20 @@ sdk.block.getReward(blockNumber)
 
 > 响应数据
 
-   参数      |     类型     |        描述       |
------------ | ------------ | ---------------- | ---------------- 
-validators | Array | 记账节点列表 |
-kols | Array | 生态节点列表 |
+   参数      |     类型     |        描述       
+----------- | ------------ | ---------------- 
+validators | Array | 记账节点列表 
+kols | Array | 生态节点列表 
 
 
 > 节点列表的元素为Object，其中包含如下属性
 
-   参数      |     类型     |        描述       |
------------ | ------------ | ---------------- | ---------------- 
-address | String| 节点地址 |
- reward | Array | 节点奖励列表 |
+   参数      |     类型     |        描述       
+----------- | ------------ | ---------------- 
+address | String| 节点地址 
+ reward | Array | 节点奖励列表 
 
-reward列表[ value0, value1, value2 ]
+> reward列表[ value0, value1, value2 ]
 
 | 参数   | 类型   | 描述             |
 | :----- | ------ | ---------------- |
@@ -1496,8 +1496,8 @@ reward列表[ value0, value1, value2 ]
 
 > 错误码
 
-   异常       |     错误码   |   描述   |
------------  | ----------- | -------- |
+   异常       |     错误码   |   描述   
+-----------  | ----------- | -------- 
 INVALID_BLOCKNUMBER_ERROR | 11060 | BlockNumber must bigger than 0
 SYSTEM_ERROR |   20000     |  System error
 
@@ -1525,17 +1525,17 @@ sdk.block.getLatestReward()
 
 > 响应数据
 
-| 参数       | 类型  | 描述         |      |
-| ---------- | ----- | ------------ | ---- |
-| validators | Array | 记账节点列表 |      |
-| kols       | Array | 生态节点列表 |      |
+| 参数       | 类型  | 描述         |
+| ---------- | ----- | ------------ |
+| validators | Array | 记账节点列表 |
+| kols       | Array | 生态节点列表 |
 
 > 节点列表的元素为Object，其中包含如下属性
 
-| 参数    | 类型   | 描述         |      |
-| ------- | ------ | ------------ | ---- |
-| address | String | 节点地址     |      |
-| reward  | Array  | 节点奖励列表 |      |
+| 参数    | 类型   | 描述         |
+| ------- | ------ | ------------ |
+| address | String | 节点地址     |
+| reward  | Array  | 节点奖励列表 |
 
 reward列表[ value0, value1, value2 ]
 
@@ -1547,8 +1547,8 @@ reward列表[ value0, value1, value2 ]
 
 > 错误码
 
-   异常       |     错误码   |   描述   |
------------  | ----------- | -------- |
+   异常       |     错误码   |   描述   
+-----------  | ----------- | -------- 
 SYSTEM_ERROR |   20000     |  System error
 
 > 示例
