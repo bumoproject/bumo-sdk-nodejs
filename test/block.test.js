@@ -106,25 +106,16 @@ describe('Test bumo-sdk block service', function() {
     let data = await sdk.block.getReward('100');
     data.errorCode.should.equal(0);
     data.result.should.be.a('object');
-    data.result.should.have.property('blockReward');
-    data.result.should.have.property('validatorsReward');
-
-    data = await sdk.block.getReward();
-    data.errorCode.should.equal(11060);
-
-    data = await sdk.block.getReward('');
-    data.errorCode.should.equal(11060);
-
-    data = await sdk.block.getReward('abc');
-    data.errorCode.should.equal(11060);
+    data.result.should.have.property('validators');
+    data.result.should.have.property('kols');
   });
 
   it('test block.getLatestReward()', async() => {
     let data = await sdk.block.getLatestReward();
     data.errorCode.should.equal(0);
     data.result.should.be.a('object');
-    data.result.should.have.property('blockReward');
-    data.result.should.have.property('validatorsReward');
+    data.result.should.have.property('validators');
+    data.result.should.have.property('kols');
   });
 
 

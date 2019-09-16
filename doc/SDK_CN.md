@@ -1398,16 +1398,6 @@ blockNumber     |   String     |  待查询的区块高度
 ----------- | ------------ | ---------------- |
 validators | Array | 验证节点列表
 
-
-> validators 的元素为Object，其中包含如下属性
-
-   参数      |     类型     |        描述       |
------------ | ------------ | ---------------- |
-address | String| 共识节点地址
-pledge_coin_amount | String | 验证节点押金
-
-
-
 > 错误码
 
    异常       |     错误码   |   描述   |
@@ -1443,16 +1433,6 @@ sdk.block.getLatestValidators()
 ----------- | ------------ | ---------------- |
 validators | Array | 验证节点列表
 
-
-> validators 的元素为Object，其中包含如下属性
-
-   参数      |     类型     |        描述       |
------------ | ------------ | ---------------- |
-address | String| 共识节点地址
-pledge_coin_amount | String | 验证节点押金
-
-
-
 > 错误码
 
    异常       |     错误码   |   描述   |
@@ -1475,34 +1455,44 @@ sdk.block.getLatestValidators().then(result => {
 
 > 接口说明
 
-  获取指定区块中的区块奖励和验证节点奖励
+  获取指定区块中的区块奖励和验证节点奖励 (推荐使用 [getLatestReward](#getlatestreward) 替代)
 
 > 调用方法
 
 sdk.block.getReward(blockNumber)
 
+
+
 > 请求参数
 
-   参数      |     类型     |        描述       |
------------ | ------------ | ---------------- |
-blockNumber     |   String     |  待查询的区块高度
+| 参数        | 类型   | 描述             |
+| ----------- | ------ | ---------------- |
+| blockNumber | String | 待查询的区块高度 |
+
+
 
 > 响应数据
 
    参数      |     类型     |        描述       |
------------ | ------------ | ---------------- |
-blockReward | String | 区块奖励数
-validatorsReward | Array | 验证节点奖励情况
+----------- | ------------ | ---------------- | ---------------- 
+validators | Array | 记账节点列表 |
+kols | Array | 生态节点列表 |
 
 
-> validatorsReward 的元素为Object，其中包含如下属性
+> 节点列表的元素为Object，其中包含如下属性
 
    参数      |     类型     |        描述       |
------------ | ------------ | ---------------- |
-validator | String| 验证节点地址
- reward | String | 验证节点奖励
+----------- | ------------ | ---------------- | ---------------- 
+address | String| 节点地址 |
+ reward | Array | 节点奖励列表 |
 
+reward列表[ value0, value1, value2 ]
 
+| 参数   | 类型   | 描述             |
+| :----- | ------ | ---------------- |
+| Value0 | String | 奖励金额         |
+| Value1 | String | 投票奖励分配地址 |
+| Value2 | Number | 投票奖励分配比率 |
 
 > 错误码
 
@@ -1533,23 +1523,27 @@ sdk.block.getReward(100).then(result => {
 
 sdk.block.getLatestReward()
 
-
 > 响应数据
 
-   参数      |     类型     |        描述       |
------------ | ------------ | ---------------- |
-blockReward | String | 区块奖励数
-validatorsReward | Array | 验证节点奖励情况
+| 参数       | 类型  | 描述         |      |
+| ---------- | ----- | ------------ | ---- |
+| validators | Array | 记账节点列表 |      |
+| kols       | Array | 生态节点列表 |      |
 
+> 节点列表的元素为Object，其中包含如下属性
 
-> validatorsReward 的元素为Object，其中包含如下属性
+| 参数    | 类型   | 描述         |      |
+| ------- | ------ | ------------ | ---- |
+| address | String | 节点地址     |      |
+| reward  | Array  | 节点奖励列表 |      |
 
-   参数      |     类型     |        描述       |
------------ | ------------ | ---------------- |
-validator | String| 验证节点地址
- reward | String | 验证节点奖励
+reward列表[ value0, value1, value2 ]
 
-
+| 参数   | 类型   | 描述             |
+| :----- | ------ | ---------------- |
+| Value0 | String | 奖励金额         |
+| Value1 | String | 投票奖励分配地址 |
+| Value2 | Number | 投票奖励分配比率 |
 
 > 错误码
 
